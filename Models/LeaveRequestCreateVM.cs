@@ -1,9 +1,5 @@
-﻿using LeaveManagement.Web.Data;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.Build.Framework;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Xml.Linq;
 using RequiredAttribute = System.ComponentModel.DataAnnotations.RequiredAttribute;
 
 namespace LeaveManagement.Web.Models
@@ -11,11 +7,18 @@ namespace LeaveManagement.Web.Models
     public class LeaveRequestCreateVM : IValidatableObject
     {
         [Required]
-        [Display(Name ="Start Date")]
+        [Display(Name = "Start Date")]
+        [DisplayFormat(DataFormatString ="{0:yyyy-MM-dd}")]
+        [DataType(DataType.Date)]
         public DateTime? StartDate { get; set; }
+        
         [Required]
         [Display(Name = "End Date")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
+        [DataType(DataType.Date)]
+        
         public DateTime? EndDate { get; set; }
+        
         [Required]
         [Display(Name = "Leave Type")]
         public int LeaveTypeId { get; set; }

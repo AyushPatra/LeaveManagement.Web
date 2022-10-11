@@ -7,6 +7,7 @@ using LeaveManagement.Web.Contracts;
 using LeaveManagement.Web.Repositories;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using LeaveManagement.Web.Services;
+using LeaveManagement.Application.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
